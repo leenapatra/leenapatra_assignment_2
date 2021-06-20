@@ -1,0 +1,16 @@
+To Run the Scripts
+======================
+1. excecute usersForm.sh with below command
+./userForm.sh <name> --this name can be anything, if it matches with available users text files then it will return teh user data
+
+
+To run the tests
+=====================
+1. cd tests
+2. run below command
+./userForm_test.sh
+
+by default the test with run for name "Tom".
+You can update the userForm_test.sh to change the variable $input to a name of your choice
+
+it consists of 2 test, 1 for alpha char and one for numeric char.

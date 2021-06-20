@@ -1,0 +1,36 @@
+#! /bin/sh
+
+# this is a sample script that collect user data and stores a file.
+
+userName=$1
+
+cd .
+fileList=`ls *.txt`
+flag=false
+fileExists() {	
+	for x in $fileList; do
+		if [[ $x == $userName.txt ]]; then
+			flag=true
+		fi
+ 	done
+        echo $flag
+}
+
+echo "func call"
+fileValid=$(fileExists)
+echo $fileValid
+
+if [[ "$userName" != [^a-zA-Z] ]]; then
+ 	#validate that your input contain only alphabet
+	echo "Please enter Valid Name, Numeric characters in name is not Acceptable"
+elif [[ $fileValid != true ]]; then
+	echo "Requested User Data not found...."
+else
+	#print the output, as all criteria met
+	echo "Loading your Data, please hold on..."
+	sleep 2s
+	cat $userName.txt
+fi
+
+
+exit 0;

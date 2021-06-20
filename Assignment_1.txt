@@ -1,0 +1,11 @@
+To ensure that the POds are running and successfully responds to the requests, I would track the Pod Lifecylce. I would check the Pod probe to monitor the health.
+
+Once the deployment is applied, the pod would go from Pending state, moving through to Running state. Once in Running state and Pod Condition iss verified to be Ready, it is safe to say that the Pod will be serving all request successfully.
+kubectl get pods  -- returns the pod status (Running, pending, terminated)
+kubectl get pod <pod_name> -o yaml -- Check for Condition --> Status Section in output.
+If the type is marked as "Ready " and status as "True", which means the pod is ready to serve requests succesfully.
+
+Probes are nothing but diagnostics that are performed periodically on the container.
+In order to monitor my container Running status and if it requires to be restarted, I would use livenessProbe.
+In order to determine if my container is ready to server traffic, I would use readinessProbe. 
+I would define the probes in my pod specification itself.
