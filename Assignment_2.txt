@@ -1,3 +1,7 @@
+
+Folder shunit2-master is the unit testing framework for Shell based scripts.
+Go to folder unit_case
+
 To Run the Scripts
 ======================
 1. excecute usersForm.sh with below command
